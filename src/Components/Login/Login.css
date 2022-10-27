@@ -1,0 +1,40 @@
+.form-container {
+  width: 40vw;
+  height: 50vh;
+  background-color: white;
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+#login-form {
+  margin: 0 auto;
+  width: 60%;
+  height: 60%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.input-field {
+  width: 100%;
+  height: 50px;
+  font-size: larger;
+  outline: none;
+}
+
+.login-btn {
+  background-color: rgb(0, 100, 200);
+  color: white;
+  text-decoration: none;
+  border: none;
+  font-weight: 400;
+  font-size: large;
+  width: 10rem;
+}
+.login-btn:hover {
+  background-color: white;
+  color: rgb(0, 100, 200);
+  border: 0.2px solid rgb(0, 100, 200);
+}
