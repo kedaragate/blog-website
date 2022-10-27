@@ -1,5 +1,7 @@
 import React from "react";
-import { NavLink } from "react-router-dom";
+import { NavLink, useAsyncValue } from "react-router-dom";
+import { LoginContext } from "../../Context/LoginContext";
+import { useContext } from "react";
 
 import "./NavigationBar.css";
 
@@ -21,6 +23,7 @@ export default function NavigationBar(props) {
           <NavLink to="/WriteBlogs">Write Blogs</NavLink>
         </li>
       </ul>
+
       <div className="navigation-bar-btn-container">
         <NavLink to="/Login">
           <button className="login-button btn">Login</button>

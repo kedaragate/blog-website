@@ -10,7 +10,7 @@ export default function Register() {
     password: "",
   });
   const [confirmPassword, setConfirmPassword] = useState("");
-  const url = "https://node-js-app-with-auth.herokuapp.com/api/login";
+  const url = "https://node-js-app-with-auth.herokuapp.com/api/register";
   //   const url = "http://localhost:5000/api/login";
   const options = {
     method: "POST",

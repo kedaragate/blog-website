@@ -20,7 +20,7 @@ export default function Login() {
             name="emailId"
             id="emailId-login"
             className="input-field"
-            value={value.userDetails.emailId}
+            value={value.userLoginDetails.emailId}
             onChange={value.handleChange}
             required
           />
@@ -32,7 +32,7 @@ export default function Login() {
             name="password"
             id="password-login"
             className="input-field"
-            value={value.userDetails.password}
+            value={value.userLoginDetails.password}
             onChange={value.handleChange}
             required
           />

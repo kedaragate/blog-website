@@ -12,7 +12,11 @@ import { LoginContext } from "./Context/LoginContext";
 
 function App() {
   const [islogin, setIsLogin] = useState(false);
-  const [userDetails, setUserDetails] = useState({ emailId: "", password: "" });
+  const [userLoginDetails, setUserLoginDetails] = useState({
+    emailId: "",
+    password: "",
+  });
+  const [accessToken, setAccessToken] = useState("");
 
   const url = "https://node-js-app-with-auth.herokuapp.com/api/login";
   //   const url = "http://localhost:5000/api/login";
@@ -21,7 +25,7 @@ function App() {
     headers: {
       "Content-Type": "application/json",
     },
-    body: JSON.stringify(userDetails),
+    body: JSON.stringify(userLoginDetails),
   };
 
   function handleSubmit(e) {
@@ -29,12 +33,15 @@ function App() {
 
     fetch(url, options)
       .then((res) => res.json())
-      .then((data) => console.log(data))
+      .then((data) => {
+        setIsLogin(true);
+        setAccessToken(data.accessToken);
+      })
       .catch((err) => console.log(err));
   }
 
   const handleChange = (e) => {
-    setUserDetails((prev) => {
+    setUserLoginDetails((prev) => {
       return {
         ...prev,
         [e.target.name]: e.target.value,
@@ -44,8 +51,15 @@ function App() {
 
   return (
     <BrowserRouter>
+      {console.log(accessToken)}
       <LoginContext.Provider
-        value={{ userDetails, handleSubmit, handleChange }}
+        value={{
+          userLoginDetails,
+          handleSubmit,
+          handleChange,
+          islogin,
+          accessToken,
+        }}
       >
         <div className="App">
           <Routes>
